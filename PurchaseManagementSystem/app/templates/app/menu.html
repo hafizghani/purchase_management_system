@@ -1,0 +1,17 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div>
+    <form class="margintop" action='purchaseorderform' method='GET'>
+        <button type="submit" class="btn btn-info">Issue Purchase Order</button>
+    </form>
+
+    <form class="margintop" action='purchaseorderhistory' method='GET'>
+        <button type="submit" class="btn btn-outline-info waves-effect">View Purchase Order</button>
+    </form>
+
+</div>
+
+{% endblock %}
+ 
