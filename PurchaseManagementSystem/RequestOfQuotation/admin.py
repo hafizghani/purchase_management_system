@@ -1,3 +1,6 @@
 from django.contrib import admin
+from RequestOfQuotation.models import RequestOfQuotation,RequestOfQuotationItem
 
-# Register your models here.
+admin.site.register(RequestOfQuotation)
+admin.site.register(RequestOfQuotationItem)
+

@@ -10,6 +10,7 @@ import app.forms
 import app.views
 import PurchaseOrder.views
 import PurchaseRequisition.views
+import RequestOfQuotation.views
 
 # Uncomment the next lines to enable the admin:
 from django.conf.urls import include
@@ -38,6 +39,13 @@ urlpatterns = [
     url(r'^purchaserequisitionhistorydetails', PurchaseRequisition.views.purchaserequisitionhistorydetails, name='purchase_requisition_history_details'),
     url(r'^purchaserequisitionhistory', PurchaseRequisition.views.purchaserequisitionhistory, name="purchase_requisition_history"),
 
+    #request of quotation
+    url(r'^requestofquotationform$', RequestOfQuotation.views.requestofquotationform, name="request_of_quotation_form"),
+    url(r'^fillingrequestofquotation', RequestOfQuotation.views.fillingrequestofquotation, name="fill_request_of_quotation_form"),
+    url(r'^requestofquotationconfirmation', RequestOfQuotation.views.requestofquotationconfirmation, name="confirm_request_of_quotation"),
+    url(r'^requestofquotationdetails', RequestOfQuotation.views.requestofquotationdetails, name="request_of_quotation_details"),
+    url(r'^requestofquotationhistorydetails', RequestOfQuotation.views.requestofquotationhistorydetails, name='request_of_quotation_history_details'),
+    url(r'^requestofquotationhistory', RequestOfQuotation.views.requestofquotationhistory, name="request_of_quotation_history"),
 
     #purchase order
     url(r'^purchaseorderform$', PurchaseOrder.views.purchaseorderform, name="purchase_order_form"),
