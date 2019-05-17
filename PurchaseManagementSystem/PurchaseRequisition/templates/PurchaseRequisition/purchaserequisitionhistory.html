@@ -1,7 +1,7 @@
 ﻿{% extends "app/layout.html" %}
 
 {% block content %}
-<div class="purcahserequisitionhistory margintop" action="menu" >
+<div class="purchaseorderhistory margintop" action="menu" >
     
     <form action="purchaserequisitionhistorydetails" method="GET">
         <table class="table table-striped margintop">
@@ -23,11 +23,12 @@
               {% endfor %}
           </tbody>
         </table>
+    </form>
+       <form action="menu">
         <div class="margintop">
-            <a type="submit" class="btn btn-info" href="/menu">Back</a>
+            <button type="submit" class="btn btn-info" >Back</button>
         </div>
     </form>
-       
 </div>
 
 
