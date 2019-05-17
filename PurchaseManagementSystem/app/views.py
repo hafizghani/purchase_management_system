@@ -11,7 +11,7 @@ from django.shortcuts import render
 from django.http import HttpRequest, HttpResponseRedirect
 from django.template import RequestContext
 from django.db import models
-from app.models import UserInfo,Item,Vendor
+from app.models import Person,Item,Vendor
 from django.views.generic import TemplateView
 from django.shortcuts import render
 from django.http import HttpRequest

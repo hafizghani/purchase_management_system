@@ -8,13 +8,16 @@ from django.contrib.auth.models import User
 
 #sharing entity
 
-class UserInfo(models.Model):
+class Person(models.Model):
     user_id = models.OneToOneField(User)
-    user_address = models.TextField()
-    user_phone_number = models.TextField()
-    user_role = models.TextField()
+    person_id = models.CharField(primary_key=True, max_length=10)
+    person_name = models.TextField()
+    person_address = models.TextField()
+    person_phone_number = models.TextField()
+    person_role = models.TextField(default = 'MANAGER')
+
     def __chr__(self):
-        return str(self.user_id)
+        return str(self.person_id)
 
 class Vendor(models.Model):
     vendor_id = models.CharField(primary_key=True, max_length=10)

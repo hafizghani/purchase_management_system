@@ -226,3 +226,9 @@ title {
 .fontlabel {
     font-weight: 500;
 }
+
+.logoutbutton {
+    margin-top: 35px;
+    margin-left: 90%;
+    position: absolute;
+}

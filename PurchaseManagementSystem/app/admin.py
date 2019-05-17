@@ -1,7 +1,7 @@
 from django.contrib import admin
-from app.models import UserInfo,Item,Vendor
+from app.models import Person,Item,Vendor
 
 
-admin.site.register(UserInfo)
+admin.site.register(Person)
 admin.site.register(Vendor)
 admin.site.register(Item)
