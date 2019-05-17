@@ -127,7 +127,6 @@
   <ItemGroup>
     <Content Include="app\static\app\content\bootstrap.css" />
     <Content Include="app\static\app\content\bootstrap.min.css" />
-    <Content Include="app\static\app\content\buttonstyle.css" />
     <Content Include="app\static\app\content\site.css" />
     <Content Include="app\static\app\content\style.css" />
     <Content Include="app\static\app\fonts\glyphicons-halflings-regular.eot" />
@@ -155,8 +154,16 @@
     <Content Include="app\templates\app\userlogin.html" />
     <Content Include="DeliveryOrder\templates\DeliveryOrder\index.html" />
     <Content Include="Invoice\templates\Invoice\index.html" />
-    <Content Include="PurchaseOrder\templates\PurchaseOrder\index.html" />
-    <Content Include="PurchaseRequisition\templates\PurchaseRequisition\index.html" />
+    <Content Include="PurchaseOrder\templates\PurchaseOrder\purchaseorderconfirmation.html" />
+    <Content Include="PurchaseOrder\templates\PurchaseOrder\purchaseorderdetails.html" />
+    <Content Include="PurchaseOrder\templates\PurchaseOrder\purchaseorderform.html" />
+    <Content Include="PurchaseOrder\templates\PurchaseOrder\purchaseorderhistory.html" />
+    <Content Include="PurchaseOrder\templates\PurchaseOrder\purchaseorderhistorydetails.html" />
+    <Content Include="PurchaseRequisition\templates\PurchaseRequisition\purchaserequisitionconfirmation.html" />
+    <Content Include="PurchaseRequisition\templates\PurchaseRequisition\purchaserequisitiondetails.html" />
+    <Content Include="PurchaseRequisition\templates\PurchaseRequisition\purchaserequisitionform.html" />
+    <Content Include="PurchaseRequisition\templates\PurchaseRequisition\purchaserequisitionhistory.html" />
+    <Content Include="PurchaseRequisition\templates\PurchaseRequisition\purchaserequisitionhistorydetails.html" />
     <Content Include="Quotation\templates\Quotation\index.html" />
     <Content Include="RequestOfQuotation\templates\RequestOfQuotation\index.html" />
     <Content Include="requirements.txt" />

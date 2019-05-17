@@ -9,6 +9,7 @@ import django.contrib.auth.views
 import app.forms
 import app.views
 import PurchaseOrder.views
+import PurchaseRequisition.views
 
 # Uncomment the next lines to enable the admin:
 from django.conf.urls import include
@@ -29,6 +30,14 @@ urlpatterns = [
             'next_page': '/',
         },
         name='logout'),
+
+    #purchase requisition
+    url(r'^purchaserequisitionform$', PurchaseRequisition.views.purchaserequisitionform, name="purchase_requisition_form"),
+    url(r'^purchaserequisitionconfirmation', PurchaseRequisition.views.purchaserequisitionconfirmation, name="confirm_purchase_requisition"),
+    url(r'^purchaserequisitiondetails', PurchaseRequisition.views.purchaserequisitiondetails, name="purchase_requisition_details"),
+    url(r'^purchaserequisitionhistorydetails', PurchaseRequisition.views.purchaserequisitionhistorydetails, name='purchase_requisition_history_details'),
+    url(r'^purchaserequisitionhistory', PurchaseRequisition.views.purchaserequisitionhistory, name="purchase_requisition_history"),
+
 
     #purchase order
     url(r'^purchaseorderform$', PurchaseOrder.views.purchaseorderform, name="purchase_order_form"),
