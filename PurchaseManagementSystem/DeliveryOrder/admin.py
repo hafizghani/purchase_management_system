@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from DeliveryOrder.models import DeliveryOrder,DeliveryOrderItem
+
+
+admin.site.register(DeliveryOrder)
+admin.site.register(DeliveryOrderItem)
