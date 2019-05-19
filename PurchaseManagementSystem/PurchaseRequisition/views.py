@@ -72,10 +72,6 @@ def purchaserequisitionconfirmation(request):
     items = list()
 
     i = 0
-    item_length = len(items_id)
-    grand_total=Decimal(0)
-
-    i = 0
     items_length = len(items_id)
     grand_total = Decimal(0)
 
