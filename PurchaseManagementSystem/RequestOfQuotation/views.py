@@ -15,6 +15,9 @@ from django.views.generic import TemplateView
 from django.core.exceptions import ObjectDoesNotExist
 from django.http.request import QueryDict
 from decimal import Decimal
+from prettytable import PrettyTable
+from django.core.mail import send_mail
+from django.conf import settings
 import random
 import datetime 
 
@@ -67,8 +70,6 @@ def requestofquotationconfirmation(request):
     vendor_id = request.POST['vendor_id']
     description = request.POST['description']
     staff_info = Person.objects.get(user_id = staff_id)
-    vendor_info = Vendor.objects.get(vendor_id = vendor_id)
-    
     responses = request.read()
     print(responses)
    
@@ -106,24 +107,37 @@ def requestofquotationconfirmation(request):
         grand_total = grand_total + total
     print(items)
 
+    try:
+        vendor_info = Vendor.objects.get(vendor_id = vendor_id)
 
 
+        context = {
+                'title': 'Request Of Quotation Confirmation',
+                'purchase_requisition_id' : purchase_requisition_id,
+                'request_of_quotation_id' : roq_id,
+                'staff_id' : staff_id,
+                'vendor_id' : vendor_id,
+                'grand_total': grand_total,
+                'rows' : items,
+                'staff_info' : staff_info,
+                'vendor_info' : vendor_info,
+                'description' : description
+            }
 
-    context = {
-            'title': 'Request Of Quotation Confirmation',
-            'purchase_requisition_id' : purchase_requisition_id,
-            'request_of_quotation_id' : roq_id,
-            'staff_id' : staff_id,
-            'vendor_id' : vendor_id,
-            'grand_total': grand_total,
-            'rows' : items,
-            'staff_info' : staff_info,
-            'vendor_info' : vendor_info,
-            'description' : description
-        }
 
-
-    return render(request,'RequestOfQuotation/requestofquotationconfirmation.html',context)
+        return render(request,'RequestOfQuotation/requestofquotationconfirmation.html',context)
+    except Vendor.DoesNotExist:
+        context = { 'error': 'Please insert valid vendor ID!',
+                    'title': 'Request Of Quotation Form',
+                    'purchase_requisition_id' : purchase_requisition_id,
+                    'request_of_quotation_id' : roq_id,
+                    'staff_id' : staff_id,
+                    'grand_total': grand_total,
+                    'rows' : items,
+                    'staff_info' : staff_info,
+                    'description' : description
+            }
+        return render(request,'RequestOfQuotation/requestofquotationform.html',context)
 
  
 def requestofquotationdetails(request):
@@ -204,6 +218,21 @@ def requestofquotationdetails(request):
     pr.save()
 
     print(pr)
+
+    #send email to vendor
+    x = PrettyTable()
+
+    x.field_names = ["Item ID","Item Name","Quantity","Unit Price","Total Price"]
+
+    for item in items:
+        x.add_row([item['item_id'],item['item_name'],item['quantity'],item['unit_price'],item['total_price']])
+
+    subject = 'REQUEST OF QUOTATION INFORMATION: '+ roq_id
+    message = 'This is the Request of Quotation Order Information: \n'+'Person In Charge: '+staff_info.person_name+'\n'+staff_info.person_address+ '\n' +'Request of Quotation Number: ' + roq_id + '\n'+ '\n'+'Time Issued: ' + str(current_time) + '\n'+'Vendor ID: ' + vendor_id + '\n'+'Description: ' + description + '\n'+ str(x) +'\n'
+
+    email_from = settings.EMAIL_HOST_USER
+    recipient_list = [vendor_info.vendor_email,]
+    send_mail( subject, message, email_from, recipient_list )
 
     # info pass to html
     context = {
