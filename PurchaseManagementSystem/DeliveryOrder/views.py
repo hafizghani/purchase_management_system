@@ -51,7 +51,7 @@ def fillingdeliveryorder(request):
         item_list = PurchaseOrderItem.objects.filter(purchase_order_id = pur_id)
         context = {
                 'title': 'Delivery Order Form',
-                'delivery_order_id': 'PO' + str(do_id),
+                'delivery_order_id': 'DO' + str(do_id),
                 'purchase_order_id': pur_id, 
                 'staff_id' : staff.person_id,
                 'vendor_id': po.vendor_id.vendor_id,
