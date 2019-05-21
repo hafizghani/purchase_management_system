@@ -40,8 +40,17 @@ def userlogin(request):
 
 @login_required
 def menu(request):
+
+
     context = {
             'title':'Main Menu'
         }
-    context['user'] = request.user
-    return render(request,'app/menu.html',context)
+
+    user_id = request.user.id
+    staff = Person.objects.get(user_id = user_id)
+
+    if staff.person_role == 'FINANCE' :
+        return render(request,'app/menufinance.html',context)
+    else:
+        return render(request,'app/menu.html',context)
+
