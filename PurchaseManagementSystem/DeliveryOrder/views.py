@@ -36,7 +36,13 @@ def fillingdeliveryorder(request):
 
     context = {}
     pur_id = request.GET['pur_id']
-    do_id = random.randint(10000000,99999999)
+
+    do_id = 1001
+
+    do = DeliveryOrder.objects.all()
+    numberdo = len(do)
+    do_id = int(do_id) + int(numberdo) 
+
     user_id = request.user.id
     staff = Person.objects.get(user_id = user_id)
 
