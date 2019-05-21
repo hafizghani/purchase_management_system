@@ -21,6 +21,7 @@ class PurchaseRequisitionItem(models.Model):
     pr_id= models.ForeignKey(PurchaseRequisition)#takes character
     item_id= models.ForeignKey(Item)#takes character
     unit_price= models.DecimalField(max_digits= 10, decimal_places=2)
+    total_price = models.DecimalField(max_digits= 10, decimal_places=2)
     quantity= models.IntegerField()
     ref_id = models.CharField(max_length=20,null=True,default=None, blank=True )
 

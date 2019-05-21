@@ -28,9 +28,14 @@ import datetime
 @login_required
 def purchaserequisitionform(request):
     
-    pr_id = random.randint(10000000,99999999)
     user_id = request.user.id
     person = Person.objects.get(user_id = user_id)
+
+    pr_id = 1001
+
+    pr = PurchaseRequisition.objects.all()
+    numberpr = len(pr)
+    pr_id = int(pr_id) + int(numberpr) 
 
     context = {
             'title':'Purchase Requisition Form',
@@ -176,7 +181,8 @@ def purchaserequisitiondetails(request):
         pr_item_info = PurchaseRequisitionItem(pr_id = purchase_requisition, 
                                          item_id = itemitem, 
                                          quantity = item['quantity'], 
-                                         unit_price = item['unit_price'])
+                                         unit_price = item['unit_price'],
+                                         total_price = item['total_price'])
         pr_item_info.save()
 
 
