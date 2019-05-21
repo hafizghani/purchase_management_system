@@ -1,4 +1,4 @@
-﻿{% extends "app/layout.html" %}
+{% extends "app/layout.html" %}
 
 {% block content %}
 <div class="formpurchaseorder" >
@@ -29,10 +29,6 @@
             </div>
         </div>
         <div class="row margintop">
-            <div class="col">
-                <label class="labelpodetails">Shipping Instructions</label>
-               <textarea class="form-control potextarea" name="shipping_inst" id="shipping_inst" placeholder="Shipping Instructions (If applicable)" readonly >{{shipping_inst}}</textarea>
-            </div>
             <div class="col">
                 <label class="labelpodetails">Description</label>
                 <textarea class="form-control potextarea" name="description" id="description" placeholder="Purchase Order Description (If applicable)" readonly>{{description}}</textarea>
@@ -74,7 +70,7 @@
         <div class="margintop">
             <button type="submit" class="btn btn-info buttonsize">Close</button>
         </div>
-
+        <a href="https://www.maybank2u.com.my/home/m2u/common/login.do">Make Payment</a>
 
     </form>
 

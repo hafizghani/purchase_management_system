@@ -37,7 +37,11 @@ def fillinginvoice(request):
     global responsesItems
     context = {}
     pur_id = request.GET['pur_id']
-    inv_id = random.randint(1000000,9999999)
+    inv_id = 1001
+
+    inv = Invoice.objects.all()
+    numberinv = len(inv)
+    inv_id = int(inv_id) + int(numberinv)
     try: 
         purchase_orders = PurchaseOrder.objects.get(purchase_order_id = pur_id)
         item_list = PurchaseOrderItem.objects.filter(purchase_order_id = pur_id)
@@ -185,6 +189,7 @@ def invoicedetails(request):
                             time_created = current_time,
                             total_price = grand_total, 
                             person_id = staff_info,
+                            invoice_status = 'PENDING',
                             description = description,
                             vendor_id = vendor_info, 
                             purchase_order_id = purchaseorder,
