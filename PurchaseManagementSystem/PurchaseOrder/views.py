@@ -41,14 +41,6 @@ def purchaseorderform(request):
 
 
 @login_required
-def menu(request):
-    context = {
-            'title':'Main Menu'
-        }
-    return render(request,'app/menu.html',context)
-
-
-@login_required
 def fillingpurchaseorder(request):
 
     context = {}

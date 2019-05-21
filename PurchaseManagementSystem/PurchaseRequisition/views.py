@@ -26,14 +26,6 @@ import datetime
 
 
 @login_required
-def menu(request):
-    context = {
-            'title':'Main Menu'
-        }
-    context['user'] = request.user
-    return render(request,'app/menu.html',context)
-
-@login_required
 def purchaserequisitionform(request):
     
     pr_id = random.randint(10000000,99999999)
@@ -78,10 +70,6 @@ def purchaserequisitionconfirmation(request):
     print(total_price)
 
     items = list()
-
-    i = 0
-    item_length = len(items_id)
-    grand_total=Decimal(0)
 
     i = 0
     items_length = len(items_id)

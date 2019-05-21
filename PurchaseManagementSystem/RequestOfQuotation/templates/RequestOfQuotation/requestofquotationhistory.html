@@ -1,23 +1,25 @@
 ﻿{% extends "app/layout.html" %}
 
 {% block content %}
-<div class="purchaseorderhistory margintop" action="menu" >
+<div class="purchaseorderhistory margintop">
     
-    <form action="purchaserequisitionhistorydetails" method="GET">
+    <form action="requestofquotationhistorydetails" method="GET">
         <table class="table table-striped margintop">
           <thead>
             <tr>
-              <th scope="col">Purchase Requisition ID</th>
-              <th scope="col">Date</th>
-              <th scope="col">Status</th>
+              <th scope="col">Request Of Quotation ID</th>
+              <th scope="col">Staff ID</th>
+              <th scope="col">Vendor ID</th>
+              <th scope="col">Time</th>
             </tr>
           </thead>
           <tbody>
               {% for r in rows %}
             <tr>
-                 <td><button type="submit" name="pr_id" value="{{r.pr_id}}" class="btn btn-info" >{{r.pr_id}}</button></td>
+                 <td><button type="submit" name="roq_id" value="{{r.request_of_quotation_id}}" class="btn btn-info" >{{r.request_of_quotation_id}}</button></td>
+                 <td>{{r.person_id.person_id}}</td>
+                 <td>{{r.vendor_id}}</td>
                  <td>{{r.time_created}}</td>
-                 <td>{{r.status}}</td>
 
             </tr>
               {% endfor %}

@@ -4,7 +4,7 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <Name>PurchaseManagementSystem</Name>
     <RootNamespace>PurchaseManagementSystem</RootNamespace>
-    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env1|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -152,8 +152,16 @@
     <Content Include="app\templates\app\menufinance.html" />
     <Content Include="app\templates\app\menu.html" />
     <Content Include="app\templates\app\userlogin.html" />
-    <Content Include="DeliveryOrder\templates\DeliveryOrder\index.html" />
-    <Content Include="Invoice\templates\Invoice\index.html" />
+    <Content Include="DeliveryOrder\templates\DeliveryOrder\deliveryorderconfirmation.html" />
+    <Content Include="DeliveryOrder\templates\DeliveryOrder\deliveryorderdetails.html" />
+    <Content Include="DeliveryOrder\templates\DeliveryOrder\deliveryorderform.html" />
+    <Content Include="DeliveryOrder\templates\DeliveryOrder\deliveryorderhistory.html" />
+    <Content Include="DeliveryOrder\templates\DeliveryOrder\deliveryorderhistorydetails.html" />
+    <Content Include="Invoice\templates\Invoice\invoiceconfirmation.html" />
+    <Content Include="Invoice\templates\Invoice\invoicedetails.html" />
+    <Content Include="Invoice\templates\Invoice\invoiceform.html" />
+    <Content Include="Invoice\templates\Invoice\invoicehistory.html" />
+    <Content Include="Invoice\templates\Invoice\invoicehistorydetails.html" />
     <Content Include="PurchaseOrder\templates\PurchaseOrder\purchaseorderconfirmation.html" />
     <Content Include="PurchaseOrder\templates\PurchaseOrder\purchaseorderdetails.html" />
     <Content Include="PurchaseOrder\templates\PurchaseOrder\purchaseorderform.html" />
@@ -164,10 +172,17 @@
     <Content Include="PurchaseRequisition\templates\PurchaseRequisition\purchaserequisitionform.html" />
     <Content Include="PurchaseRequisition\templates\PurchaseRequisition\purchaserequisitionhistory.html" />
     <Content Include="PurchaseRequisition\templates\PurchaseRequisition\purchaserequisitionhistorydetails.html" />
-    <Content Include="Quotation\templates\Quotation\index.html" />
-    <Content Include="RequestOfQuotation\templates\RequestOfQuotation\index.html" />
+    <Content Include="Quotation\templates\Quotation\quotationconfirmation.html" />
+    <Content Include="Quotation\templates\Quotation\quotationdetails.html" />
+    <Content Include="Quotation\templates\Quotation\quotationform.html" />
+    <Content Include="Quotation\templates\Quotation\quotationhistory.html" />
+    <Content Include="Quotation\templates\Quotation\quotationhistorydetails.html" />
+    <Content Include="RequestOfQuotation\templates\RequestOfQuotation\requestofquotationconfirmation.html" />
+    <Content Include="RequestOfQuotation\templates\RequestOfQuotation\requestofquotationdetails.html" />
+    <Content Include="RequestOfQuotation\templates\RequestOfQuotation\requestofquotationform.html" />
+    <Content Include="RequestOfQuotation\templates\RequestOfQuotation\requestofquotationhistory.html" />
+    <Content Include="RequestOfQuotation\templates\RequestOfQuotation\requestofquotationhistorydetails.html" />
     <Content Include="requirements.txt" />
-    <Content Include="db.sqlite3" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.html">
@@ -175,10 +190,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Interpreter Include="env\">
-      <Id>env</Id>
+    <Interpreter Include="env1\">
+      <Id>env1</Id>
       <Version>3.7</Version>
-      <Description>env (Python 3.7 (64-bit))</Description>
+      <Description>env1 (Python 3.7 (64-bit))</Description>
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
