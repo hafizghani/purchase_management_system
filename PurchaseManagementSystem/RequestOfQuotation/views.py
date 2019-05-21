@@ -36,7 +36,13 @@ def fillingrequestofquotation(request):
 
     context = {}
     pr_id = request.GET['pr_id']
-    roq_id = random.randint(1000000,9999999)
+
+    roq_id = 1001
+
+    roq = RequestOfQuotation.objects.all()
+    numberroq = len(roq)
+    roq_id = int(roq_id) + int(numberroq) 
+
     staff_id = request.user.id
     staff_info = Person.objects.get(user_id = staff_id)
 
@@ -96,7 +102,7 @@ def requestofquotationconfirmation(request):
     while i < items_length:
         total= Decimal(items_quantity[i]) * Decimal(items_unit_price[i])
         item_table = {
-            'item_name': items_name[i],
+            'item_name':items_name[i],
             'item_id': items_id[i],
             'quantity' : items_quantity[i],
             'unit_price': items_unit_price[i],
@@ -127,15 +133,10 @@ def requestofquotationconfirmation(request):
 
         return render(request,'RequestOfQuotation/requestofquotationconfirmation.html',context)
     except Vendor.DoesNotExist:
+
+
         context = { 'error': 'Please insert valid vendor ID!',
                     'title': 'Request Of Quotation Form',
-                    'purchase_requisition_id' : purchase_requisition_id,
-                    'request_of_quotation_id' : roq_id,
-                    'staff_id' : staff_id,
-                    'grand_total': grand_total,
-                    'rows' : items,
-                    'staff_info' : staff_info,
-                    'description' : description
             }
         return render(request,'RequestOfQuotation/requestofquotationform.html',context)
 
