@@ -1,4 +1,4 @@
-Django==1.11.24
+Django==1.11.29
 mysql-connector-python==8.0.15
 pip==18.1
 prettytable==0.7.2
