@@ -45,8 +45,6 @@
               <th scope="col">Item ID</th>
               <th scope="col">Item</th>
               <th scope="col">Quantity</th>
-              <th scope="col">Price Per Unit (RM)</th>
-              <th scope="col">Total (RM)</th>
             </tr>
           </thead>
           <tbody>
@@ -55,8 +53,6 @@
                  <td>{{r.item_id}}</td>
                  <td>{{r.item_id.item_name}}</td>
                  <td>{{r.quantity}}</td>
-                 <td>{{r.unit_price}}</td>
-                 <td>{{r.total_price}}</td>
             </tr>
               {% endfor %}
           </tbody>
@@ -66,8 +62,6 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <th>Grand Total</th>
-                  <td>{{grand_total}}</td>
               </tr>
           </tfoot>
         </table>

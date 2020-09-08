@@ -10,6 +10,7 @@
               <th scope="col">Invoice ID</th>
               <th scope="col">Staff ID</th>
               <th scope="col">Vendor ID</th>
+              <th scope="col">Status</th>
               <th scope="col">Time</th>
             </tr>
           </thead>
@@ -19,6 +20,7 @@
                  <td><button type="submit" name="inv_id" value="{{r.invoice_id}}" class="btn btn-info" >{{r.invoice_id}}</button></td>
                  <td>{{r.person_id.person_id}}</td>
                  <td>{{r.vendor_id}}</td>
+                 <td>{{r.invoice_status}}</td>
                  <td>{{r.time_created}}</td>
 
             </tr>

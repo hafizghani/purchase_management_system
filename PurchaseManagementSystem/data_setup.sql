@@ -16,7 +16,8 @@ INSERT INTO app_item VALUES('PRO005', 'Colour Printer 3in1','Standard Printer');
 INSERT INTO app_item VALUES('PRO006', 'Computer Set Asus','Standard set');
 
 --staff data set
-INSERT INTO app_person(user_id_id, person_id, person_name, person_address, person_phone_number,person_role) VALUES(1,'STAFF00001','Muhamad Ghani','Finance MMU, Persiaran Multimedia 63100 Cyberjaya Selangor','+60112345424','FINANCE');
+INSERT INTO app_person(user_id_id, person_id, person_name, person_address, person_phone_number,person_role) VALUES(1,'STAFF00001','Hafiz Ghani','Finance MMU, Persiaran Multimedia 63100 Cyberjaya Selangor','+60112345424','FINANCE');
+INSERT INTO app_person(user_id_id, person_id, person_name, person_address, person_phone_number,person_role) VALUES(2,'STAFF00002','Muhamad Ghani','RnD MMU, Persiaran Multimedia 63100 Cyberjaya Selangor','+60156348724','MANAGER');
 
 
 --vendor data set
